@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#EEF0F5">
+<title>잠시 주차중입니다</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<style>
+  :root{
+    --bg:#EEF0F5; --card:#FFFFFF; --ink:#1E2230; --sub:#7A8094;
+    --blue:#2F5BEA; --dark:#2A2E3A;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *,*::before,*::after{box-sizing:inherit}
+  html,body{margin:0}
+  html{height:100%}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+    min-height:100%; display:flex; padding:20px;
+  }
+  .card{
+    width:100%; max-width:400px; margin:auto; background:var(--card);
+    border-radius:28px; padding:22px 24px 34px; text-align:center;
+    box-shadow:0 10px 30px rgba(40,50,90,.08);
+  }
+  .tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12px; font-weight:700; color:var(--blue);
+    background:#EAF0FF; border-radius:999px; padding:6px 12px; margin:6px 0 10px;
+  }
+  .tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue)}
+  .car{width:170px;height:auto;display:block;margin:10px auto 0;overflow:visible}
+  .bounce{transform-box:view-box;transform-origin:140px 148px;animation:bounce 2.6s ease-in-out infinite}
+  @keyframes bounce{0%,60%,100%{transform:none}72%{transform:translateY(-6px) scaleY(1.02)}84%{transform:translateY(0) scaleY(.97)}}
+  .spark{animation:spark 2.6s ease-in-out infinite}
+  @keyframes spark{0%,55%,100%{opacity:.9}70%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.bounce,.spark{animation:none}}
+  h1{font-size:28px; font-weight:800; margin:14px 0 10px; letter-spacing:-.02em}
+  .lead{font-size:16px; line-height:1.6; color:var(--sub); margin:0 0 30px}
+  .actions{display:flex; justify-content:center; gap:44px}
+  .act{display:flex; flex-direction:column; align-items:center; gap:10px;
+       text-decoration:none; color:var(--ink); font-size:15px; font-weight:700;
+       -webkit-tap-highlight-color:transparent}
+  .circle{width:78px;height:78px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+          box-shadow:0 6px 16px rgba(30,40,80,.22)}
+  .circle svg{width:32px;height:32px}
+  .call .circle{background:var(--blue)}
+  .sms .circle{background:var(--dark)}
+  .circle{transition:transform .12s ease}
+  .act:active .circle{transform:scale(.94)}
+  .act:focus-visible{outline:none}
+  .act:focus-visible .circle{outline:3px solid #FFC83D; outline-offset:4px}
+</style>
+</head>
+<body>
+<main class="card">
+  <span class="tag">차주 연락처 연결</span>
+
+  <!-- 방긋 웃는 노란 자동차 옆모습 (자체 제작) -->
+  <svg class="car" viewBox="0 0 280 160" role="img" aria-label="방긋 웃는 노란 자동차">
+    <defs>
+      <linearGradient id="cBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFE680"/><stop offset=".55" stop-color="#FFC92E"/><stop offset="1" stop-color="#F0A500"/>
+      </linearGradient>
+      <linearGradient id="cGlass" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#CBE8FF"/><stop offset="1" stop-color="#7DB6E4"/>
+      </linearGradient>
+      <radialGradient id="cTire" cx=".45" cy=".4" r=".6">
+        <stop offset="0" stop-color="#4A505E"/><stop offset="1" stop-color="#1D212B"/>
+      </radialGradient>
+      <radialGradient id="cHub" cx=".4" cy=".35" r=".7">
+        <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#AEB5C2"/>
+      </radialGradient>
+      <radialGradient id="cLight" cx=".5" cy=".4" r=".6">
+        <stop offset="0" stop-color="#FFFFFF"/><stop offset=".7" stop-color="#FFF6C8"/><stop offset="1" stop-color="#FFE27A"/>
+      </radialGradient>
+    </defs>
+    <ellipse cx="140" cy="148" rx="112" ry="7" fill="#E1E4EE"/>
+    <g class="bounce">
+      <!-- 차체 (오른쪽이 앞) -->
+      <path d="M24 112 Q20 88 40 82 L78 76 Q96 40 132 36 L170 36 Q196 38 214 74 L246 82 Q262 88 260 108 L258 118 Q256 126 248 126 L32 126 Q24 126 24 118 Z"
+            fill="url(#cBody)" stroke="#D99000" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M48 86 Q130 72 236 86" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".45"/>
+      <!-- 창문 -->
+      <path d="M90 76 Q104 48 132 46 L146 46 L146 76 Z" fill="url(#cGlass)" stroke="#D99000" stroke-width="2.5"/>
+      <path d="M156 46 L168 46 Q190 48 204 76 L156 76 Z" fill="url(#cGlass)" stroke="#D99000" stroke-width="2.5"/>
+      <path d="M100 66 Q108 54 122 52" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+      <!-- 문 손잡이 -->
+      <rect x="120" y="88" width="16" height="5" rx="2.5" fill="#D99000"/>
+      <rect x="170" y="88" width="16" height="5" rx="2.5" fill="#D99000"/>
+      <!-- 후미등 -->
+      <rect x="22" y="94" width="8" height="12" rx="3" fill="#FF6B6B"/>
+      <!-- 전조등 = 방긋 웃는 눈 -->
+      <path class="eye" d="M226 101 Q242 78 258 101 Q242 92 226 101 Z" fill="url(#cLight)" stroke="#B87700" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle class="spark" cx="236" cy="91" r="2.8" fill="#fff"/>
+      <!-- 볼 -->
+      <ellipse cx="236" cy="110" rx="8" ry="4.5" fill="#FF9DB0" opacity=".8"/>
+      <!-- 범퍼 = 웃는 입 -->
+      <path d="M246 112 Q256 120 260 110" fill="none" stroke="#5A2E12" stroke-width="3" stroke-linecap="round"/>
+      <!-- 바퀴 -->
+      <g class="wheel"><circle cx="76" cy="126" r="22" fill="url(#cTire)"/><circle cx="76" cy="126" r="9" fill="url(#cHub)"/></g>
+      <g class="wheel"><circle cx="206" cy="126" r="22" fill="url(#cTire)"/><circle cx="206" cy="126" r="9" fill="url(#cHub)"/></g>
+    </g>
+  </svg>
+
+  <h1>잠시 주차중입니다</h1>
+  <p class="lead">연락이 필요할 경우<br>전화 또는 문자 부탁드립니다.</p>
+
+  <div class="actions">
+    <a class="act call" id="callBtn" href="tel:01054937615">
+      <span class="circle"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span>
+      전화연결
+    </a>
+    <a class="act sms" id="smsBtn" href="sms:01054937615?body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94">
+      <span class="circle"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.5 1.4 4.7 3.6 6.2L5 21l4-2.2c1 .2 2 .3 3 .3 5.5 0 10-3.6 10-8.1S17.5 3 12 3zM7.5 12.3a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm4.5 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm4.5 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6z"/></svg></span>
+      문자전송
+    </a>
+  </div>
+</main>
+
+<script>
+  // 번호는 화면에 표시하지 않고, 누를 때만 연결합니다.
+  var p = ['010','5493','7615'].join('');
+  var msg = '안녕하세요';
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  document.getElementById('callBtn').href = 'tel:' + p;
+  document.getElementById('smsBtn').href = 'sms:' + p + (ios ? '&' : '?') + 'body=' + encodeURIComponent(msg);
+</script>
+
+</body>
+</html>
